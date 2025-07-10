@@ -1,12 +1,18 @@
-# Node modules
+# Backend
 node_modules/
-
-# Environment variables
 .env
-
-# Logs
 logs/
 *.log
+
+# Frontend: sys-admin-app
+/frontend/sys-admin-app/node_modules/
+frontend/sys-admin-app/.env
+frontend/sys-admin-app/build/
+
+# Frontend: guardian-app
+/frontend/guardian-app/node_modules/
+frontend/guardian-app/.env
+frontend/guardian-app/build/
 
 # OS-specific
 .DS_Store
