@@ -1,0 +1,21 @@
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    console.log("Trying login with", username, password);
+
+    const response = await axios.post("http://127.0.0.1:8000/api/token/", {
+      username,
+      password,
+    });
+
+    console.log("Token response", response.data);
+
+    localStorage.setItem("accessToken", response.data.access);
+    localStorage.setItem("refreshToken", response.data.refresh);
+
+    navigate("/system-admin/dashboard");
+  } catch (err) {
+    console.error("LOGIN FAILED", err.response?.data || err.message);
+    alert("Invalid username or password");
+  }
+};
